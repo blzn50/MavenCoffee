@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test.practice.mavenwebapp;
+package com.practice.mavenwebapp;
 
 import com.practice.mavenwebapp.CoffeeMaker;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.experimental.categories.Category;
+import org.pmw.tinylog.Logger;
 
 /**
  *
@@ -43,6 +45,7 @@ public class CoffeeMakerTest {
      * Test of pressOnOff method, of class CoffeeMaker.
      */
     @Test
+    @Category(com.practice.mavenwebapp.UnitTests.class)
     public void testPressOnOff() {
         System.out.println("pressOnOff");
         CoffeeMaker cm = CoffeeMaker.getInstance();
@@ -123,6 +126,7 @@ public class CoffeeMakerTest {
      * Test of brew method, of class CoffeeMaker.
      */
     @Test
+    @Category(com.practice.mavenwebapp.UnitTests.class)
     public void testBrew() {
         System.out.println("brew");
         CoffeeMaker cm = CoffeeMaker.getInstance();
@@ -140,12 +144,18 @@ public class CoffeeMakerTest {
      * Test of fillBeans method, of class CoffeeMaker.
      */
     @Test
+    @Category(com.practice.mavenwebapp.UnitTests.class)
     public void testFillBeans() {
         System.out.println("CoffeeMakerTest: fillBeans");
         CoffeeMaker cm = CoffeeMaker.getInstance();
         cm.pressOnOff();
         cm.brew();
         cm.fillBeans();
-
+    }
+    
+    @Test
+    @Category(com.practice.mavenwebapp.IntegrationTests.class)
+    public void tryIntegrationTest1(){
+        Logger.info("A normal integration test");
     }
 }

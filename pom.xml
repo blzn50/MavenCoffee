@@ -8,6 +8,20 @@
     <packaging>war</packaging>
 
     <name>MavenCoffee</name>
+    <profiles>
+        <profile>
+            <id>unitTests</id>
+            <properties>
+                <test.categories>com.practice.UnitTests</test.categories>        
+            </properties>
+        </profile>
+        <profile>
+            <id>integrationTests</id>
+            <properties>
+                <test.categories>com.practice.IntegrationTests</test.categories>
+            </properties>
+        </profile>
+    </profiles>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
